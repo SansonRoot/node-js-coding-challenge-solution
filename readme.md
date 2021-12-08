@@ -1,12 +1,12 @@
 ## Vien Health Node coding challenge
 
-#SOLUTION
+# SOLUTION
 
-##Pre-requisite
+## Pre-requisite
 * Install MongoDB
 * Install NodeJs
 
-###Steps
+### Instructions
 1. Clone the project unto your desired location on your computer or deployment environment
 2. Start your MongoDB service if you have not already started it
 3. Edit the `.env.example` file and save as `.env` in the same directory (root directory)
