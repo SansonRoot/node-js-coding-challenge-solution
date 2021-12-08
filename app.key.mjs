@@ -17,7 +17,7 @@ data.forEach((d)=>{
     if(split[0]!=='') env[split[0]]=split[1];
 })
 
-//check if key is already specified, ask for permission to override key
+//check if key is already specified, ask for permission from user to override key
 if (env.JWT_SECRET !== undefined && env.JWT_SECRET !== ''){
 
     const rl = readline.createInterface({

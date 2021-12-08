@@ -1,8 +1,16 @@
 'use strict'
 
+//allows module access to the .env configs
 require('dotenv').config({path: '.env'});
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
+
+/*
+    This Module handles all pre-authentication requests business logic
+    Models are injected into this module for use
+    This module is injected into the AuthController and is fully testable
+    by itself
+ */
 
 module.exports = class AuthService{
 
@@ -21,17 +29,17 @@ module.exports = class AuthService{
     }
 
     static async save(data){
-        const user = new User({
+        const model = new User({
             name: data.name,
             email: data.email,
             password: data.password
         });
 
         try{
-            const saved = await user.save();
+            const user = await model.save();
             const token = await user.generateToken();
 
-            return {user: saved,token};
+            return {user,token};
 
         }catch (e) {
 
@@ -41,10 +49,10 @@ module.exports = class AuthService{
         }
     }
 
-    static async findByEmail(value){
+    static async findByEmail(email){
         try{
 
-            const d = User.findOne({email:value});
+            const d = User.findOne({email});
 
             if (d) return d;
 

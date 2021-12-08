@@ -1,7 +1,12 @@
 'use strict'
 
 const validator = require('validator');
-
+/*
+    Validation module
+    Handles validation of posted data in the controllers
+    To be Injected into the controllers for use
+    This module is fully testable without need for any other files
+ */
 module.exports = class Validator {
 
     static validateUser(data,fields){
