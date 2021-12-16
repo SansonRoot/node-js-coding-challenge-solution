@@ -1,6 +1,6 @@
-## Vien Health Node coding challenge
+## Node Js simple REST API with authentication and middleware
 
-# SOLUTION
+# Service Design pattern
 
 ## Pre-requisite
 * Install MongoDB
